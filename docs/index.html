@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kevin's GeekerMaker upgrade</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one calm card, one step at a time, Back / Next underneath. */
+:root{
+  --paper:#f6f5f0; --ink:#1d2321; --muted:#5c6662; --line:#dcdfd7;
+  --copper:#a85a24; --mask:#1f5f4a; --mask-soft:#e3eee8; --card:#ffffff;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"IBM Plex Sans",-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#141917; --ink:#e7ebe8; --muted:#9aa5a0; --line:#2c3531;
+  --copper:#e08a4f; --mask:#6cc4a1; --mask-soft:#1d2d27; --card:#1b211f; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#141917; --ink:#e7ebe8; --muted:#9aa5a0; --line:#2c3531;
+  --copper:#e08a4f; --mask:#6cc4a1; --mask-soft:#1d2d27; --card:#1b211f; color-scheme:dark}
+html,body{height:100%}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 var(--body)}
+.wrap{min-height:100%;max-width:620px;margin:0 auto;box-sizing:border-box;padding-block:48px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;align-content:start;gap:28px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--copper)}
+.dots{display:flex;gap:8px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.dots i.on{background:var(--mask)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:32px 28px;display:grid;gap:18px;min-width:0}
+.count{font:500 13px var(--mono);color:var(--muted)}
+h1,h2{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,7vw,44px);font-weight:700}
+h2{font-size:clamp(26px,5vw,32px);font-weight:700}
+p{margin:0}
+.soft{color:var(--muted)}
+code{font-family:var(--mono);font-size:.9em;background:var(--mask-soft);padding:2px 6px;border-radius:4px}
+.keys{font:500 15px var(--mono)}
+.prompt{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--copper);border-radius:8px;padding:14px 16px;font:14px/1.55 var(--mono);white-space:pre-wrap;word-break:break-word}
+ul{margin:0;padding-left:20px;display:grid;gap:8px}
+.flow{font:500 15px var(--mono);color:var(--mask)}
+.nav{display:flex;justify-content:space-between;gap:12px}
+button{font:500 16px var(--body);border-radius:8px;padding:12px 22px;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+button.primary{background:var(--mask);border-color:var(--mask);color:var(--paper)}
+button:focus-visible{outline:2px solid var(--copper);outline-offset:2px}
+button[disabled]{visibility:hidden}
+.copied{font:500 13px var(--mono);color:var(--mask)}
+.screen{display:grid;gap:18px}
+footer{color:var(--muted);font-size:14px;text-align:center}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="top"><span class="brand">GeekerMaker</span><div class="dots" id="dots" aria-hidden="true"></div></div>
+
+  <main class="card" aria-live="polite">
+    <section class="screen" data-s="0">
+      <h1>Kevin's GeekerMaker upgrade</h1>
+      <p>Hey Kevin. This gives your Claude some of the habits that make mine productive. It plans before it builds, checks its work on the real thing, and remembers what it learns. That goes for any project: code, electronics, a website, a 3D print, a plan for something you're building.</p>
+      <p class="soft">You do three small things. Claude does the rest.</p>
+    </section>
+
+    <section class="screen" data-s="1" hidden>
+      <div class="count">Step 1 of 3</div>
+      <h2>Make a "Projects" folder</h2>
+      <p>In Finder, press <span class="keys">⌘ ⇧ H</span> to open your home folder. Make a new folder called <code>Projects</code>.</p>
+      <p class="soft">All your projects will live there.</p>
+    </section>
+
+    <section class="screen" data-s="2" hidden>
+      <div class="count">Step 2 of 3</div>
+      <h2>Open the Code tab</h2>
+      <p>In the Claude app, click <b>Code</b> at the top (not Chat, not Cowork). Start a new session and pick your <code>Projects</code> folder.</p>
+      <p>Next to the message box, set the mode to <b>Auto</b>. Claude then gets on with the work and only stops for anything risky. If you don't see Auto, pick <b>Accept edits</b>.</p>
+      <p class="soft">Code works right on your Mac, with your files, your tools and anything you plug in.</p>
+    </section>
+
+    <section class="screen" data-s="3" hidden>
+      <div class="count">Step 3 of 3</div>
+      <h2>Paste this to Claude</h2>
+      <div class="prompt" id="prompt">Set me up with the Cy Maker Kit: clone https://github.com/bassmanjp/cy-maker-kit into this folder (if git isn't installed, set up Apple's developer tools first), then open cy-maker-kit/START-HERE.md and walk me through it one step at a time.</div>
+      <div><button id="copy">Copy</button> <span class="copied" id="copied" role="status"></span></div>
+    </section>
+
+    <section class="screen" data-s="4" hidden>
+      <h2>Now Claude takes over</h2>
+      <p>It walks you through setup one step at a time, about 45 minutes. It only stops when it needs your hands:</p>
+      <ul>
+        <li>Clicking <b>Install</b> on Apple's developer tools pop-up.</li>
+        <li>Making a free GitHub account, your projects' safe copy.</li>
+        <li>Telling it what you want to build first.</li>
+      </ul>
+      <p class="soft">No API keys, no extra cost, no terminal.</p>
+    </section>
+
+    <section class="screen" data-s="5" hidden>
+      <h2>Every project after that</h2>
+      <p>Open the Code tab on the project's folder, then:</p>
+      <p class="flow">/architect → work on your project → /wrap</p>
+      <p><code>/architect</code> tells you where things stand. <code>/wrap</code> saves everything to GitHub. If you're ever lost, type <code>/guide</code>.</p>
+      <p class="soft">Have fun. Build something weird.</p>
+    </section>
+  </main>
+
+  <div class="nav">
+    <button id="back">Back</button>
+    <button id="next" class="primary">Let's go</button>
+  </div>
+
+  <footer>Stuck? Ask Claude <code>/guide</code>, or text JP.</footer>
+</div>
+
+<script>
+(function(){
+  var screens=[].slice.call(document.querySelectorAll(".screen")), n=screens.length, i=0, KEY="geekermaker-step";
+  try{i=Math.min(n-1,Math.max(0,parseInt(localStorage.getItem(KEY)||"0",10)||0));}catch(e){}
+  var dots=document.getElementById("dots");
+  for(var k=0;k<n;k++){dots.appendChild(document.createElement("i"));}
+  var back=document.getElementById("back"), next=document.getElementById("next");
+  function show(){
+    screens.forEach(function(s,k){s.hidden=k!==i;});
+    [].forEach.call(dots.children,function(d,k){d.classList.toggle("on",k<=i);});
+    back.disabled=i===0;
+    next.textContent=i===0?"Let's go":(i===n-1?"Start over":"Next");
+    try{localStorage.setItem(KEY,String(i));}catch(e){}
+  }
+  next.addEventListener("click",function(){i=(i===n-1)?0:i+1;show();next.focus();});
+  back.addEventListener("click",function(){if(i>0){i--;show();}});
+  document.getElementById("copy").addEventListener("click",function(){
+    var el=document.getElementById("prompt"), msg=document.getElementById("copied");
+    function fallback(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);msg.textContent="Selected: press ⌘C";}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(el.textContent).then(function(){msg.textContent="Copied";},fallback);}else{fallback();}
+  });
+  show();
+})();
+</script>
+</body>
+</html>
